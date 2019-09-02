@@ -24,7 +24,7 @@ class TimerPage extends StatefulWidget {
 }
 
 class _TimerPageState extends State<TimerPage> {
-  double _time = 0;
+  int _time = 0;
   Timer _timer;
 
   @override
@@ -35,7 +35,7 @@ class _TimerPageState extends State<TimerPage> {
           children: <Widget>[
             Spacer(),
             Text(
-              "$_time",
+              _time.toString(),
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 32),
@@ -53,8 +53,7 @@ class _TimerPageState extends State<TimerPage> {
                         _time = 0;
                       });
                       _timer.cancel();
-                      }
-                ),
+                    }),
                 SizedBox(width: 64),
                 FlatButton(
                   child: Text("Start"),
